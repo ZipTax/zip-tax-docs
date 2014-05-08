@@ -1,1 +1,1 @@
-Search.setIndex({envversion:42,terms:{content:0,index:0,modul:0,search:0,page:0},objtypes:{},objnames:{},filenames:["index"],titles:["Welcome to ZipTax&#8217;s documentation!"],objects:{},titleterms:{indic:0,document:0,welcom:0,ziptax:0,tabl:0}})
+Search.setIndex({envversion:42,terms:{content:0,index:0,modul:0,search:[],page:[]},objtypes:{},objnames:{},filenames:["index"],titles:["Zip-Tax.com API Documentation"],objects:{},titleterms:{welcom:[],zip:0,tax:0,ziptax:[],api:0,indic:0,tabl:0,document:0,com:0}})
