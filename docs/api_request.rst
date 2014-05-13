@@ -28,17 +28,17 @@ The complete Reqest URL
 The Zip-Tax.com API URL consists of the following GET Request parameters which are used in the request.
 
 
-+-------------+----------+------------------------------------------------------------------------------+
-| key         | required | You account API key                                                          |
-+-------------+----------+------------------------------------------------------------------------------+
-| postal code | required | The 5 digit postal code. 'NOTE: Include leading zeros'                       |
-+-------------+----------+------------------------------------------------------------------------------+
-| state       | optional | The 2 letter state code. 'Example: CA for California'                        |
-+-------------+----------+------------------------------------------------------------------------------+
-| city        | optional | The full city name                                                           |
-+-------------+----------+------------------------------------------------------------------------------+
-| format      | optional | The return format. Valid formats are JSON or XML. The default format is JSON |
-+-------------+----------+------------------------------------------------------------------------------+
++-------------+----------+-------------------------------------------------------------------+
+| key         | required | You account API key                                               |
++-------------+----------+-------------------------------------------------------------------+
+| postal code | required | The 5 digit postal code. *NOTE: Include leading zeros*            |
++-------------+----------+-------------------------------------------------------------------+
+| state       | optional | The 2 letter state code. *Example: CA for California*             |
++-------------+----------+-------------------------------------------------------------------+
+| city        | optional | The full city name                                                |
++-------------+----------+-------------------------------------------------------------------+
+| format      | optional | The return format. Valid formats are JSON or XML. *Default: JSON* |
++-------------+----------+-------------------------------------------------------------------+
 
 Here is a sample of a fully formated URL used in the request::
 
