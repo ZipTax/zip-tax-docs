@@ -1,0 +1,41 @@
+Request URL
+===========
+
+The API request URL is used to form your request to the API from your application. 
+
+.. note:: Please consult the documentation for your application language for making HTTP requests.
+
+The Basic Request URL
+---------------------
+
+The request URL consists of three parts.
+
++------------+-----------------+
+| Subdomain  | api.zip-tax.com |
++------------+-----------------+
+| Action     | /request        |
++------------+-----------------+
+| Version    | /v20            |
++------------+-----------------+
+
+These three parts form the basic URL for the API request::
+
+	http://api.zip-tax.com/request/v20
+	
+The complete Reqest URL
+-----------------------
+
+The Zip-Tax.com API URL consists of the following GET Request parameters which are used in the request.
+
+
++-------------+----------+------------------------------------------------------------------------------+
+| key         | required | You account API key                                                          |
++-------------+----------+------------------------------------------------------------------------------+
+| postal code | required | The 5 digit postal code. 'NOTE: Include leading zeros'                       |
++-------------+----------+------------------------------------------------------------------------------+
+| state       | optional | The 2 letter state code. 'Example: CA for California'                        |
++-------------+----------+------------------------------------------------------------------------------+
+| city        | optional | The full city name                                                           |
++-------------+----------+------------------------------------------------------------------------------+
+| format      | optional | The return format. Valid formats are JSON or XML. The default format is JSON |
++-------------+----------+------------------------------------------------------------------------------+

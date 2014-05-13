@@ -16,7 +16,7 @@ API Documentation
 	:maxdepth: 2
 	
 	getting_started
-	api_url
+	api_request
 	api_response
 	api_response_codes
 	api_results
