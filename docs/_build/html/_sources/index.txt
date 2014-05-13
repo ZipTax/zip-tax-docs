@@ -9,8 +9,3 @@ Contents:
    api-endpoint
 
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
