@@ -44,4 +44,6 @@ Here is a sample of a fully formated URL used in the request::
 
 	http://api.zip-tax.com/request/v20?key=1234567890&postalcode=90265&state=CA&format=JSON
 	
-Use this url to make an HTTP GET request to the API. Check out the :doc:api_response documentation to learn more about the request response.
+Use this url to make an HTTP GET request to the API. 
+
+Check out the :doc:`api_response` documentation to learn more about the request response.
