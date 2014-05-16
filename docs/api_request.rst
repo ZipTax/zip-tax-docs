@@ -46,4 +46,4 @@ Here is a sample of a fully formated URL used in the request::
 	
 Use this url to make an HTTP GET request to the API. 
 
-Check out the :doc:`api_response` documentation to learn more about the request response.
+Check out the :doc:`api_response` documentation to learn more about the API response.
