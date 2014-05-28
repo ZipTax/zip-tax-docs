@@ -13,7 +13,7 @@ The API can be delivered in both JSON and XML formats by passing the desired for
 +------------------------------------------+---------------------------------------+
 | **message**                              | Special service messages [deprecated] |
 +------------------------------------------+---------------------------------------+
-| **results** (json) or **response** (xml) | Special service messages [deprecated] |
+| **results** (json) or **response** (xml) | The API result set                    |
 +------------------------------------------+---------------------------------------+
 
 
@@ -24,7 +24,7 @@ This table represents the response codes [**rCode** (json) or **code** (xml)] re
 
 .. note::
 
-	The response codes are specific to the request and the response. The response codes do not relate to the result set.
+	The response codes are specific to the request and the response. The response codes do not correspond to the result set.
 
 +---------+---------------------+----------------------------------+
 | **100** | SUCCESS             | Successful API Requet            |
@@ -82,8 +82,8 @@ Response Results
 | districtUseTax   | Portion of total use tax from the district level   | v20 only     |
 +------------------+----------------------------------------------------+--------------+
 
-JSON Sample Result
-------------------
+JSON Sample Response
+--------------------
 ::
 
 	{
@@ -151,8 +151,8 @@ JSON Sample Result
 		}]
 	}
 
-XML Sample Result
------------------
+XML Sample Response
+-------------------
 ::
 
 	<?xml version="1.0" encoding="UTF-8" ?>
