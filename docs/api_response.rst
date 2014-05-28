@@ -86,10 +86,77 @@ JSON Sample Result
 ------------------
 ::
 
-{"version":"v20","rCode":100,"results":[{"geoPostalCode":"90265","geoCity":"MALIBU","geoCounty":"LOS ANGELES","geoState":"CA","taxSales":0.090000003576279,"taxUse":0.090000003576279,"txbService":"N","txbFreight":"N","stateSalesTax":0.064999997615814,"stateUseTax":0.064999997615814,"citySalesTax":0,"cityUseTax":0,"cityTaxCode":"","countySalesTax":0.0099999997764826,"countyUseTax":0.0099999997764826,"countyTaxCode":"19","districtSalesTax":0.014999999664724,"districtUseTax":0.014999999664724},{"geoPostalCode":"90265","geoCity":"PT DUME","geoCounty":"LOS ANGELES","geoState":"CA","taxSales":0.090000003576279,"taxUse":0.090000003576279,"txbService":"N","txbFreight":"N","stateSalesTax":0.064999997615814,"stateUseTax":0.064999997615814,"citySalesTax":0,"cityUseTax":0,"cityTaxCode":"","countySalesTax":0.0099999997764826,"countyUseTax":0.0099999997764826,"countyTaxCode":"19","districtSalesTax":0.014999999664724,"districtUseTax":0.014999999664724},{"geoPostalCode":"90265","geoCity":"TWAIN HARTE","geoCounty":"VENTURA","geoState":"CA","taxSales":0.075000002980232,"taxUse":0.075000002980232,"txbService":"N","txbFreight":"N","stateSalesTax":0.064999997615814,"stateUseTax":0.064999997615814,"citySalesTax":0,"cityUseTax":0,"cityTaxCode":"","countySalesTax":0.0099999997764826,"countyUseTax":0.0099999997764826,"countyTaxCode":"56","districtSalesTax":0,"districtUseTax":0}]}
+	{"version":"v20","rCode":100,"results":[{"geoPostalCode":"90265","geoCity":"MALIBU","geoCounty":"LOS ANGELES","geoState":"CA","taxSales":0.090000003576279,"taxUse":0.090000003576279,"txbService":"N","txbFreight":"N","stateSalesTax":0.064999997615814,"stateUseTax":0.064999997615814,"citySalesTax":0,"cityUseTax":0,"cityTaxCode":"","countySalesTax":0.0099999997764826,"countyUseTax":0.0099999997764826,"countyTaxCode":"19","districtSalesTax":0.014999999664724,"districtUseTax":0.014999999664724},{"geoPostalCode":"90265","geoCity":"PT DUME","geoCounty":"LOS ANGELES","geoState":"CA","taxSales":0.090000003576279,"taxUse":0.090000003576279,"txbService":"N","txbFreight":"N","stateSalesTax":0.064999997615814,"stateUseTax":0.064999997615814,"citySalesTax":0,"cityUseTax":0,"cityTaxCode":"","countySalesTax":0.0099999997764826,"countyUseTax":0.0099999997764826,"countyTaxCode":"19","districtSalesTax":0.014999999664724,"districtUseTax":0.014999999664724},{"geoPostalCode":"90265","geoCity":"TWAIN HARTE","geoCounty":"VENTURA","geoState":"CA","taxSales":0.075000002980232,"taxUse":0.075000002980232,"txbService":"N","txbFreight":"N","stateSalesTax":0.064999997615814,"stateUseTax":0.064999997615814,"citySalesTax":0,"cityUseTax":0,"cityTaxCode":"","countySalesTax":0.0099999997764826,"countyUseTax":0.0099999997764826,"countyTaxCode":"56","districtSalesTax":0,"districtUseTax":0}]}
 
 
 XML Sample Result
 -----------------
+::
 
+	<?xml version="1.0" encoding="UTF-8" ?>
+	<ziptax>
+		<version>v20</version>
+		<code>100</code>
+		<message></message>
+			<response>
+			<geoPostalCode>90265</geoPostalCode>
+			<geoCity>MALIBU</geoCity>
+			<geoCounty>LOS ANGELES</geoCounty>
+			<geoState>CA</geoState>
+			<taxSales>0.090000003576279</taxSales>
+			<taxUse>0.090000003576279</taxUse>
+			<txbService>N</txbService>
+			<txbFreight>N</txbFreight>
+			<stateSalesTax>0.064999997615814</stateSalesTax>
+			<stateUseTax>0.064999997615814</stateUseTax>
+			<citySalesTax>0</citySalesTax>
+			<cityUseTax>0</cityUseTax>
+			<cityTaxCode></cityTaxCode>
+			<countySalesTax>0.0099999997764826</countySalesTax>
+			<countyUseTax>0.0099999997764826</countyUseTax>
+			<countyTaxCode>19</countyTaxCode>
+			<districtSalesTax>0.014999999664724</districtSalesTax>
+			<districtUseTax>0.014999999664724</districtUseTax>
+		</response>
+			<response>
+			<geoPostalCode>90265</geoPostalCode>
+			<geoCity>PT DUME</geoCity>
+			<geoCounty>LOS ANGELES</geoCounty>
+			<geoState>CA</geoState>
+			<taxSales>0.090000003576279</taxSales>
+			<taxUse>0.090000003576279</taxUse>
+			<txbService>N</txbService>
+			<txbFreight>N</txbFreight>
+			<stateSalesTax>0.064999997615814</stateSalesTax>
+			<stateUseTax>0.064999997615814</stateUseTax>
+			<citySalesTax>0</citySalesTax>
+			<cityUseTax>0</cityUseTax>
+			<cityTaxCode></cityTaxCode>
+			<countySalesTax>0.0099999997764826</countySalesTax>
+			<countyUseTax>0.0099999997764826</countyUseTax>
+			<countyTaxCode>19</countyTaxCode>
+			<districtSalesTax>0.014999999664724</districtSalesTax>
+			<districtUseTax>0.014999999664724</districtUseTax>
+		</response>
+			<response>
+			<geoPostalCode>90265</geoPostalCode>
+			<geoCity>TWAIN HARTE</geoCity>
+			<geoCounty>VENTURA</geoCounty>
+			<geoState>CA</geoState>
+			<taxSales>0.075000002980232</taxSales>
+			<taxUse>0.075000002980232</taxUse>
+			<txbService>N</txbService>
+			<txbFreight>N</txbFreight>
+			<stateSalesTax>0.064999997615814</stateSalesTax>
+			<stateUseTax>0.064999997615814</stateUseTax>
+			<citySalesTax>0</citySalesTax>
+			<cityUseTax>0</cityUseTax>
+			<cityTaxCode></cityTaxCode>
+			<countySalesTax>0.0099999997764826</countySalesTax>
+			<countyUseTax>0.0099999997764826</countyUseTax>
+			<countyTaxCode>56</countyTaxCode>
+			<districtSalesTax>0</districtSalesTax>
+			<districtUseTax>0</districtUseTax>
+		</response>
+	</ziptax>
 
