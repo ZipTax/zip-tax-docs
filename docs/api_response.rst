@@ -6,10 +6,10 @@ The API can be delivered in both JSON and XML formats by passing the desired for
 +------------------------------------------+---------------------------------------+
 | **version**                              | The API version string [v10 or v20]   |
 +------------------------------------------+---------------------------------------+
-| **rCode** (JSON) or **code** (XML)       | The request response code             |
+| **rCode** (json) or **code** (xml)       | The request response code             |
 +------------------------------------------+---------------------------------------+
 | **message**                              | Special service messages [deprecated] |
 +------------------------------------------+---------------------------------------+
-| **results** (JSON) or **response** (XML) | Special service messages [deprecated] |
+| **results** (json) or **response** (xml) | Special service messages [deprecated] |
 +------------------------------------------+---------------------------------------+
 
