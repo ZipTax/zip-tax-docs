@@ -5,10 +5,10 @@ The API request URL is used to form your request to the API from your applicatio
 
 .. note:: Please consult the documentation for your application language for making HTTP requests.
 
-The Basic Request URL
----------------------
+Base URL
+--------
 
-The request URL consists of three parts.
+The base request URL consists of three parts.
 
 +------------+-----------------+
 | Subdomain  | api.zip-tax.com |
@@ -22,8 +22,8 @@ These three parts form the basic URL for the API request::
 
 	http://api.zip-tax.com/request/v20
 	
-The complete Reqest URL
------------------------
+Complete Reqest URL
+-------------------
 
 The Zip-Tax.com API URL consists of the following GET Request parameters which are used in the request.
 
@@ -46,4 +46,4 @@ Here is a sample of a fully formated URL used in the request::
 	
 Use this url to make an HTTP GET request to the API. 
 
-Check out the :doc:`api_response` documentation to learn more about the API response.
+Check out the :doc:`api_response` documentation to learn more about the API response format.
