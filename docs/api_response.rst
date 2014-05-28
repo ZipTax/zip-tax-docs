@@ -1,5 +1,5 @@
-Response
-========
+API Response
+============
 
 Response Values
 ---------------
