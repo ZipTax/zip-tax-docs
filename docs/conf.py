@@ -241,7 +241,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'ZipTax', u'ZipTax Documentation',
-   u'Zip-Tax.com', 'ZipTax', 'One line description of project.',
+   u'Zip-Tax.com', 'ZipTax', 'Zip-Tax.com Sales Tax API',
    'Miscellaneous'),
 ]
 
