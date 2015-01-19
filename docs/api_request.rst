@@ -22,14 +22,14 @@ These three parts form the basic URL for the API request::
 
 	http://api.zip-tax.com/request/v20
 	
-Complete Reqest URL
+Complete Request URL
 -------------------
 
 The Zip-Tax.com API URL consists of the following GET Request parameters which are used in the request.
 
 
 +-------------+----------+-------------------------------------------------------------------+
-| key         | required | You account API key                                               |
+| key         | required | Your account API key                                              |
 +-------------+----------+-------------------------------------------------------------------+
 | postal code | required | The 5 digit postal code. *NOTE: Include leading zeros*            |
 +-------------+----------+-------------------------------------------------------------------+
@@ -40,7 +40,7 @@ The Zip-Tax.com API URL consists of the following GET Request parameters which a
 | format      | optional | The return format. Valid formats are JSON or XML. *Default: JSON* |
 +-------------+----------+-------------------------------------------------------------------+
 
-Here is a sample of a fully formated URL used in the request::
+Here is a sample of a fully formatted URL used in the request::
 
 	http://api.zip-tax.com/request/v20?key=1234567890&postalcode=90265&state=CA&format=JSON
 	
