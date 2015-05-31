@@ -22,7 +22,7 @@ These three parts form the basic URL for the API request::
 
 	http://api.zip-tax.com/request/v20
 	
-Complete Reqest URL
+Complete Request URL
 -------------------
 
 The Zip-Tax.com API URL consists of the following GET Request parameters which are used in the request.
