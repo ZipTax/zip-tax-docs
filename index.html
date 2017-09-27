@@ -1,0 +1,512 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Zip-Tax.com API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;php&quot;,&quot;ruby&quot;,&quot;java&quot;,&quot;javascript&quot;,&quot;csharp&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">cURL</a>
+              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="php">php</a>
+              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="java">java</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="csharp">csharp</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
+          </li>
+          <li>
+            <a href="#api-subscription-types" class="toc-h1 toc-link" data-title="API Subscription Types">API Subscription Types</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#general-api" class="toc-h2 toc-link" data-title="API Subscription Types">General API</a>
+                  </li>
+                  <li>
+                    <a href="#geo-api-address-level" class="toc-h2 toc-link" data-title="API Subscription Types">Geo API (address level)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#request" class="toc-h1 toc-link" data-title="Request">Request</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#base-url" class="toc-h2 toc-link" data-title="Request">Base URL</a>
+                  </li>
+                  <li>
+                    <a href="#full-request-example-with-query-parameters" class="toc-h2 toc-link" data-title="Request">Full Request Example (with query parameters)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#response-codes" class="toc-h1 toc-link" data-title="Response Codes">Response Codes</a>
+          </li>
+          <li>
+            <a href="#response-results" class="toc-h1 toc-link" data-title="Response Results">Response Results</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='http://zip-tax.com/pricing'>Generate your API key</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Zip-Tax.com Sales Tax API</p>
+
+<p>By providing as little as a zip code, we can determine the sales tax rates for your customers in their specific geographical area. In most states, sales tax rates change many times throughout the year. Our service provides you with a method to get this information quickly and easily and with no maintenance. The ZipTax team is dedicated to providing you with the critical up-to-date information you need so you can focus on the important parts of your business.</p>
+
+<p>Our Zip-Tax.com API is designed to allow programmers to submit a request to our servers from a website or application and retrieve response data from our databases. The format of the response can be returned as JSON or XML. Simply pass the desired format as part of the request. Zip-Tax.com works by submitting geographic information such as city, state, and zip code from your application or website. This data is used determine the correct sales tax information matching the provided location. Our service then returns that information to your application or website.</p>
+<h1 id='getting-started'>Getting Started</h1>
+<blockquote>
+<p>Establish REST method</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --header <span class="s2">"Accept:application/json"</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+</code></pre><pre class="highlight php tab-php"><code>$curl = curl_init();
+</code></pre>
+<p>The Zip-Tax.com sales tax API uses standard Representational State Transfer (REST) principles for maximum flexibility with a wide range of program languages.</p>
+
+<p>To get started, simply follow this documentation to build a reuqest using the Zip-Tax.com Request URL, parse the API Response to validate the response codes, and use the API results in your application.</p>
+
+<aside class="notice">
+For questions or comments about this documentation, please contact us at support@zip-tax.com.
+</aside>
+<h1 id='api-subscription-types'>API Subscription Types</h1><h2 id='general-api'>General API</h2>
+<p>The general Zip-Tax.com sales tax API allows jurisdiction lookups using any combination of zip code, city, and state. This API level does not provide full address level lookup and only provides county data via response. Note when using this method, multiple response values may be returned where multiple tax jurisdictions match the query inputs.</p>
+<h2 id='geo-api-address-level'>Geo API (address level)</h2>
+<p>The GEO API version of Zip-Tax.com allows queries with full address lookup. This method returns only a single response with the address level sales tax jurisdiction in the response. This is the recommended subscription type for use with our API.</p>
+<h1 id='request'>Request</h1><h2 id='base-url'>Base URL</h2>
+<p>The API request URL is used to form your request to the API from your application.</p>
+
+<p>The base request URL consists of three parts.</p>
+
+<table><thead>
+<tr>
+<th>Subdomain</th>
+<th>Action</th>
+<th>Version</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api.zip-tax.com</td>
+<td>/request</td>
+<td>/v30</td>
+</tr>
+</tbody></table>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.zip-tax.com/request/v30</code></p>
+<h3 id='query-parameters-body-data'>Query Parameters (body data)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>yes</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>postalcode</td>
+<td>if no address</td>
+<td>U.S. jurisdiction postal code (zip code)</td>
+</tr>
+<tr>
+<td>state</td>
+<td>optional</td>
+<td>two letter state code i.e. CA = California</td>
+</tr>
+<tr>
+<td>city</td>
+<td>optional</td>
+<td>full city name</td>
+</tr>
+<tr>
+<td>address</td>
+<td>if no postal code</td>
+<td>Full address. Available only with GEO subscription.</td>
+</tr>
+<tr>
+<td>format</td>
+<td>optional</td>
+<td>Default = json or specify xml</td>
+</tr>
+</tbody></table>
+<h2 id='full-request-example-with-query-parameters'>Full Request Example (with query parameters)</h2>
+<p>This endpoint returns a sample request.</p>
+
+<p><code>GET http://api.zip-tax.com/request/v30?key=1234567890&amp;postalcode=90265</code></p>
+<h1 id='response-codes'>Response Codes</h1>
+<p>The Zip-Tax.com API returns the following response codes based on request results.</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Reason</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>100</td>
+<td>SUCCESS</td>
+<td>Successful API Requet</td>
+</tr>
+<tr>
+<td>101</td>
+<td>INVALID_KEY</td>
+<td>Key format is not valid</td>
+</tr>
+<tr>
+<td>102</td>
+<td>INVALID_STATE</td>
+<td>State format is not valid</td>
+</tr>
+<tr>
+<td>103</td>
+<td>INVALID_CITY</td>
+<td>City format is not valid</td>
+</tr>
+<tr>
+<td>104</td>
+<td>INVALID_POSTAL_CODE</td>
+<td>Postal code format is not valid</td>
+</tr>
+<tr>
+<td>105</td>
+<td>INVALID_FORMAT</td>
+<td>Query string format is not valid</td>
+</tr>
+</tbody></table>
+<h1 id='response-results'>Response Results</h1>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Version</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>geoPostalCode</td>
+<td>Requested postal code</td>
+<td>all</td>
+</tr>
+<tr>
+<td>geoCity</td>
+<td>City</td>
+<td>all</td>
+</tr>
+<tr>
+<td>geoCounty</td>
+<td>County</td>
+<td>all</td>
+</tr>
+<tr>
+<td>geoState</td>
+<td>State</td>
+<td>all</td>
+</tr>
+<tr>
+<td>taxSales</td>
+<td>Total sales tax</td>
+<td>all</td>
+</tr>
+<tr>
+<td>taxUse</td>
+<td>Total use tax</td>
+<td>all</td>
+</tr>
+<tr>
+<td>txbService</td>
+<td>Taxable service (values: null,Y,N,L)</td>
+<td>all</td>
+</tr>
+<tr>
+<td>txbFreight</td>
+<td>Taxable freight (values: null,Y,N)</td>
+<td>all</td>
+</tr>
+<tr>
+<td>stateSalesTax</td>
+<td>Portion of total sales tax from the state level</td>
+<td>v20+ only</td>
+</tr>
+<tr>
+<td>stateUseTax</td>
+<td>Portion of total use tax from the state level</td>
+<td>v20+ only</td>
+</tr>
+<tr>
+<td>citySalesTax</td>
+<td>Portion of total sales tax from the city level</td>
+<td>v20+ only</td>
+</tr>
+<tr>
+<td>cityUseTax</td>
+<td>Portion of total use tax from the city level</td>
+<td>v20+ only</td>
+</tr>
+<tr>
+<td>cityTaxCode</td>
+<td>Applicable city tax code</td>
+<td>v20+ only</td>
+</tr>
+<tr>
+<td>countySalesTax</td>
+<td>Portion of total sales tax from the county level</td>
+<td>v20+ only</td>
+</tr>
+<tr>
+<td>countyUseTax</td>
+<td>Portion of total use tax from the county level</td>
+<td>v20+ only</td>
+</tr>
+<tr>
+<td>countyTaxCode</td>
+<td>Applicable county tax code</td>
+<td>v20+ only</td>
+</tr>
+<tr>
+<td>districtSalesTax</td>
+<td>Portion of total sales tax from the district level</td>
+<td>v20+ only</td>
+</tr>
+<tr>
+<td>districtUseTax</td>
+<td>Portion of total use tax from the district level</td>
+<td>v20+ only</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">cURL</a>
+                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="php">php</a>
+                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="java">java</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="csharp">csharp</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
