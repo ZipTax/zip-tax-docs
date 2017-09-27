@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;php&quot;,&quot;ruby&quot;,&quot;java&quot;,&quot;javascript&quot;,&quot;csharp&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,13 +211,7 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">cURL</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="php">php</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="java">java</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-              <a href="#" data-language-name="csharp">csharp</a>
+              <a href="#" data-language-name="shell">Testing with cURL</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -258,6 +252,9 @@
           <li>
             <a href="#response-results" class="toc-h1 toc-link" data-title="Response Results">Response Results</a>
           </li>
+          <li>
+            <a href="#support" class="toc-h1 toc-link" data-title="Support">Support</a>
+          </li>
       </div>
         <ul class="toc-footer">
             <li><a href='http://zip-tax.com/pricing'>Generate your API key</a></li>
@@ -274,11 +271,9 @@
 <p>Our Zip-Tax.com API is designed to allow programmers to submit a request to our servers from a website or application and retrieve response data from our databases. The format of the response can be returned as JSON or XML. Simply pass the desired format as part of the request. Zip-Tax.com works by submitting geographic information such as city, state, and zip code from your application or website. This data is used determine the correct sales tax information matching the provided location. Our service then returns that information to your application or website.</p>
 <h1 id='getting-started'>Getting Started</h1>
 <blockquote>
-<p>Establish REST method</p>
+<p>Request header requirement</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --header <span class="s2">"Accept:application/json"</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-</code></pre><pre class="highlight php tab-php"><code>$curl = curl_init();
 </code></pre>
 <p>The Zip-Tax.com sales tax API uses standard Representational State Transfer (REST) principles for maximum flexibility with a wide range of program languages.</p>
 
@@ -310,6 +305,11 @@ For questions or comments about this documentation, please contact us at support
 </tr>
 </tbody></table>
 <h3 id='http-request'>HTTP Request</h3>
+<blockquote>
+<p>Base URL Example</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --header <span class="s2">"Accept:application/json"</span> https://api.zip-tax.com/request/v30
+</code></pre>
 <p><code>GET https://api.zip-tax.com/request/v30</code></p>
 <h3 id='query-parameters-body-data'>Query Parameters (body data)</h3>
 <table><thead>
@@ -326,7 +326,7 @@ For questions or comments about this documentation, please contact us at support
 </tr>
 <tr>
 <td>postalcode</td>
-<td>if no address</td>
+<td>yes</td>
 <td>U.S. jurisdiction postal code (zip code)</td>
 </tr>
 <tr>
@@ -340,20 +340,34 @@ For questions or comments about this documentation, please contact us at support
 <td>full city name</td>
 </tr>
 <tr>
-<td>address</td>
-<td>if no postal code</td>
-<td>Full address. Available only with GEO subscription.</td>
-</tr>
-<tr>
 <td>format</td>
 <td>optional</td>
 <td>Default = json or specify xml</td>
 </tr>
 </tbody></table>
+<h3 id='additional-query-parameters-requires-geo-plan'>Additional Query Parameters (requires geo plan)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>optional</td>
+<td>Full address. Available only with GEO subscription.</td>
+</tr>
+</tbody></table>
 <h2 id='full-request-example-with-query-parameters'>Full Request Example (with query parameters)</h2>
+<blockquote>
+<p>Request Example with Query Params</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --header <span class="s2">"Accept:application/json"</span> https://api.zip-tax.com/request/v30?key<span class="o">=</span>1234567890&amp;postalcode<span class="o">=</span>90264
+</code></pre>
 <p>This endpoint returns a sample request.</p>
 
-<p><code>GET http://api.zip-tax.com/request/v30?key=1234567890&amp;postalcode=90265</code></p>
+<p><code>GET https://api.zip-tax.com/request/v30?key=1234567890&amp;postalcode=90264</code></p>
 <h1 id='response-codes'>Response Codes</h1>
 <p>The Zip-Tax.com API returns the following response codes based on request results.</p>
 
@@ -396,6 +410,36 @@ For questions or comments about this documentation, please contact us at support
 </tr>
 </tbody></table>
 <h1 id='response-results'>Response Results</h1>
+<blockquote>
+<p>Sample Response (json)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v30"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"geoPostalCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90264"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"geoCity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MALIBU"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"geoCounty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOS ANGELES"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"geoState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"taxSales"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0925</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"taxUse"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0925</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"txbService"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"txbFreight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stateSalesTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stateUseTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"citySalesTax"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cityUseTax"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cityTaxCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"countySalesTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0025</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"countyUseTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0025</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"countyTaxCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"districtSalesTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.03</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"districtUseTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.03</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -494,17 +538,13 @@ For questions or comments about this documentation, please contact us at support
 <td>v20+ only</td>
 </tr>
 </tbody></table>
+<h1 id='support'>Support</h1>
+<p>For questions or comments please contact us via email at: support@zip-tax.com.</p>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">cURL</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="php">php</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="java">java</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-                <a href="#" data-language-name="csharp">csharp</a>
+                <a href="#" data-language-name="shell">Testing with cURL</a>
           </div>
       </div>
     </div>

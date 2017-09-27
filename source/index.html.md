@@ -2,13 +2,13 @@
 title: Zip-Tax.com API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell: cURL
-  - python
-  - php
-  - ruby
-  - java
-  - javascript
-  - csharp
+  - shell: Testing with cURL
+#  - python
+#  - php
+#  - ruby
+#  - java
+#  - javascript
+#  - csharp
 
 toc_footers:
   - <a href='http://zip-tax.com/pricing'>Generate your API key</a>
@@ -29,18 +29,10 @@ Our Zip-Tax.com API is designed to allow programmers to submit a request to our 
 
 # Getting Started
 
-> Establish REST method
+> Request header requirement
 
 ```shell
 curl --header "Accept:application/json"
-```
-
-```python
-import requests
-```
-
-```php
-$curl = curl_init();
 ```
 
 The Zip-Tax.com sales tax API uses standard Representational State Transfer (REST) principles for maximum flexibility with a wide range of program languages.
@@ -75,6 +67,12 @@ api.zip-tax.com | /request | /v30
 
 ### HTTP Request
 
+> Base URL Example
+
+```shell
+curl --header "Accept:application/json" https://api.zip-tax.com/request/v30
+```
+
 `GET https://api.zip-tax.com/request/v30`
 
 ### Query Parameters (body data)
@@ -82,18 +80,29 @@ api.zip-tax.com | /request | /v30
 Parameter | Required | Description
 --------- | ------- | -----------
 key | yes | Your API key
-postalcode | if no address | U.S. jurisdiction postal code (zip code)
+postalcode | yes | U.S. jurisdiction postal code (zip code)
 state | optional | two letter state code i.e. CA = California
 city | optional | full city name
-address | if no postal code | Full address. Available only with GEO subscription.
 format | optional | Default = json or specify xml
+
+### Additional Query Parameters (requires geo plan)
+
+Parameter | Required | Description
+--------- | ------- | -----------
+address | optional | Full address. Available only with GEO subscription.
 
 
 ## Full Request Example (with query parameters)
 
+> Request Example with Query Params
+
+```shell
+curl --header "Accept:application/json" https://api.zip-tax.com/request/v30?key=1234567890&postalcode=90264
+```
+
 This endpoint returns a sample request.
 
-`GET http://api.zip-tax.com/request/v30?key=1234567890&postalcode=90265`
+`GET https://api.zip-tax.com/request/v30?key=1234567890&postalcode=90264`
 
 # Response Codes
 
@@ -110,6 +119,37 @@ Code | Reason | Description
 105 | INVALID_FORMAT | Query string format is not valid
 
 # Response Results
+
+> Sample Response (json)
+
+```json
+{
+  "version": "v30",
+  "rCode": 100,
+  "results": [
+    {
+      "geoPostalCode": "90264",
+      "geoCity": "MALIBU",
+      "geoCounty": "LOS ANGELES",
+      "geoState": "CA",
+      "taxSales": 0.0925,
+      "taxUse": 0.0925,
+      "txbService": "N",
+      "txbFreight": "N",
+      "stateSalesTax": 0.06,
+      "stateUseTax": 0.06,
+      "citySalesTax": 0,
+      "cityUseTax": 0,
+      "cityTaxCode": "",
+      "countySalesTax": 0.0025,
+      "countyUseTax": 0.0025,
+      "countyTaxCode": "19",
+      "districtSalesTax": 0.03,
+      "districtUseTax": 0.03
+    }
+  ]
+}
+```
 
 Name | Description | Version
 ---- | ------ | -----------
@@ -131,3 +171,7 @@ countyUseTax | Portion of total use tax from the county level | v20+ only
 countyTaxCode | Applicable county tax code | v20+ only
 districtSalesTax | Portion of total sales tax from the district level | v20+ only
 districtUseTax | Portion of total use tax from the district level | v20+ only
+
+# Support
+
+For questions or comments please contact us via email at: support@zip-tax.com.
