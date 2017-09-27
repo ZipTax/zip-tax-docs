@@ -2,13 +2,13 @@
 title: Zip-Tax.com API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell: cURL
-  - python
-  - php
-  - ruby
-  - java
-  - javascript
-  - csharp
+  - shell: Testing with cURL
+#  - python
+#  - php
+#  - ruby
+#  - java
+#  - javascript
+#  - csharp
 
 toc_footers:
   - <a href='http://zip-tax.com/pricing'>Generate your API key</a>
@@ -29,18 +29,10 @@ Our Zip-Tax.com API is designed to allow programmers to submit a request to our 
 
 # Getting Started
 
-> Establish REST method
+> Request header requirement
 
 ```shell
 curl --header "Accept:application/json"
-```
-
-```python
-import requests
-```
-
-```php
-$curl = curl_init();
 ```
 
 The Zip-Tax.com sales tax API uses standard Representational State Transfer (REST) principles for maximum flexibility with a wide range of program languages.
@@ -75,6 +67,12 @@ api.zip-tax.com | /request | /v30
 
 ### HTTP Request
 
+> Base URL Example
+
+```shell
+curl --header "Accept:application/json" https://api.zip-tax.com/request/v30
+```
+
 `GET https://api.zip-tax.com/request/v30`
 
 ### Query Parameters (body data)
@@ -91,11 +89,48 @@ format | optional | Default = json or specify xml
 
 ## Full Request Example (with query parameters)
 
+> Request Example with Query Params
+
+```shell
+curl --header "Accept:application/json" https://api.zip-tax.com/request/v30?key=1234567890&postalcode=90264
+```
+
 This endpoint returns a sample request.
 
-`GET http://api.zip-tax.com/request/v30?key=1234567890&postalcode=90265`
+`GET https://api.zip-tax.com/request/v30?key=1234567890&postalcode=90264`
 
 # Response Codes
+
+> Sample Response (json)
+
+```json
+{
+  "version": "v30",
+  "rCode": 100,
+  "results": [
+    {
+      "geoPostalCode": "90264",
+      "geoCity": "MALIBU",
+      "geoCounty": "LOS ANGELES",
+      "geoState": "CA",
+      "taxSales": 0.0925,
+      "taxUse": 0.0925,
+      "txbService": "N",
+      "txbFreight": "N",
+      "stateSalesTax": 0.06,
+      "stateUseTax": 0.06,
+      "citySalesTax": 0,
+      "cityUseTax": 0,
+      "cityTaxCode": "",
+      "countySalesTax": 0.0025,
+      "countyUseTax": 0.0025,
+      "countyTaxCode": "19",
+      "districtSalesTax": 0.03,
+      "districtUseTax": 0.03
+    }
+  ]
+}
+```
 
 The Zip-Tax.com API returns the following response codes based on request results.
 
