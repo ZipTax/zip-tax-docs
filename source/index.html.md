@@ -80,11 +80,16 @@ curl --header "Accept:application/json" https://api.zip-tax.com/request/v30
 Parameter | Required | Description
 --------- | ------- | -----------
 key | yes | Your API key
-postalcode | if no address | U.S. jurisdiction postal code (zip code)
+postalcode | yes | U.S. jurisdiction postal code (zip code)
 state | optional | two letter state code i.e. CA = California
 city | optional | full city name
-address | if no postal code | Full address. Available only with GEO subscription.
 format | optional | Default = json or specify xml
+
+### Additional Query Parameters (requires geo plan)
+
+Parameter | Required | Description
+--------- | ------- | -----------
+address | optional | Full address. Available only with GEO subscription.
 
 
 ## Full Request Example (with query parameters)
@@ -100,6 +105,20 @@ This endpoint returns a sample request.
 `GET https://api.zip-tax.com/request/v30?key=1234567890&postalcode=90264`
 
 # Response Codes
+
+The Zip-Tax.com API returns the following response codes based on request results.
+
+
+Code | Reason | Description
+---- | ------ | -----------
+100 |	SUCCESS	| Successful API Requet
+101	| INVALID_KEY	| Key format is not valid
+102	| INVALID_STATE	| State format is not valid
+103	| INVALID_CITY	| City format is not valid
+104	| INVALID_POSTAL_CODE	| Postal code format is not valid
+105 | INVALID_FORMAT | Query string format is not valid
+
+# Response Results
 
 > Sample Response (json)
 
@@ -132,20 +151,6 @@ This endpoint returns a sample request.
 }
 ```
 
-The Zip-Tax.com API returns the following response codes based on request results.
-
-
-Code | Reason | Description
----- | ------ | -----------
-100 |	SUCCESS	| Successful API Requet
-101	| INVALID_KEY	| Key format is not valid
-102	| INVALID_STATE	| State format is not valid
-103	| INVALID_CITY	| City format is not valid
-104	| INVALID_POSTAL_CODE	| Postal code format is not valid
-105 | INVALID_FORMAT | Query string format is not valid
-
-# Response Results
-
 Name | Description | Version
 ---- | ------ | -----------
 geoPostalCode	| Requested postal code | all
@@ -166,3 +171,7 @@ countyUseTax | Portion of total use tax from the county level | v20+ only
 countyTaxCode | Applicable county tax code | v20+ only
 districtSalesTax | Portion of total sales tax from the district level | v20+ only
 districtUseTax | Portion of total use tax from the district level | v20+ only
+
+# Support
+
+For questions or comments please contact us via email at: support@zip-tax.com.
