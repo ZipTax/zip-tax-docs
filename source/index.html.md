@@ -89,7 +89,7 @@ format | optional | Default = json or specify xml
 
 Parameter | Required | Description
 --------- | ------- | -----------
-address | optional | Full address. Available only with GEO subscription.
+street | optional | Full street address. Available only with GEO subscription.
 
 
 ## Full Request Example (with query parameters)
