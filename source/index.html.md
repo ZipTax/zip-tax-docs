@@ -63,19 +63,21 @@ The base request URL consists of three parts.
 
 Subdomain | Action | Version
 --------- | ------- | -----------
-api.zip-tax.com | /request | /v30
+api.zip-tax.com | /request | /v40
 
 ### HTTP Request
 
 > Base URL Example
 
 ```shell
-curl --header "Accept:application/json" https://api.zip-tax.com/request/v30
+curl --header "Accept:application/json" https://api.zip-tax.com/request/v40
 ```
 
-`GET https://api.zip-tax.com/request/v30`
+`GET https://api.zip-tax.com/request/v40`
 
-### Query Parameters (body data)
+## General API
+
+### Query Parameters
 
 Parameter | Required | Description
 --------- | ------- | -----------
@@ -85,38 +87,65 @@ state | optional | two letter state code i.e. CA = California
 city | optional | full city name
 format | optional | Default = json or specify xml
 
-### Additional Query Parameters (requires geo plan)
-
-Parameter | Required | Description
---------- | ------- | -----------
-street | optional | Full street address. Available only with GEO subscription.
-
-
-## Full Request Example (with query parameters)
+### Full Request Example (with query parameters)
 
 > Request Example with Query Params
 
 ```shell
-curl --header "Accept:application/json" https://api.zip-tax.com/request/v30?key=1234567890&postalcode=90264
+curl --header "Accept:application/json" https://api.zip-tax.com/request/v40?key=1234567890&postalcode=90264
 ```
 
 This endpoint returns a sample request.
 
-`GET https://api.zip-tax.com/request/v30?key=1234567890&postalcode=90264`
-
-# Response Codes
-
-The Zip-Tax.com API returns the following response codes based on request results.
+`GET https://api.zip-tax.com/request/v40?key=1234567890&postalcode=90264`
 
 
-Code | Reason | Description
----- | ------ | -----------
-100 |	SUCCESS	| Successful API Requet
-101	| INVALID_KEY	| Key format is not valid
-102	| INVALID_STATE	| State format is not valid
-103	| INVALID_CITY	| City format is not valid
-104	| INVALID_POSTAL_CODE	| Postal code format is not valid
-105 | INVALID_FORMAT | Query string format is not valid
+## Geo API
+
+The Geo API requires an active GEO subscription. The API supports valid U.S addresses passed in as a single parameter, or split into multiple address parameters. Examples of both methods can be found below.
+
+Note: The address parameter takes precedence. If present, the values of street, city, postalcode, and state are ignored.
+
+### Split Address Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+key | yes | Your API key
+postalcode | yes | U.S. jurisdiction postal code (zip code)
+street | optional | Full street address.
+state | optional | two letter state code i.e. CA = California
+city | optional | full city name
+format | optional | Default = json or specify xml
+
+This endpoint returns a sample request.
+
+`GET https://api.zip-tax.com/request/v40?key=1234567890&street=1111%20S%20Figueroa%20St&city=Los%20Angeles&state=CA&postalcode=90015`
+
+Note: All Parameters must be url encoded.
+
+> Request Example with Split Address Query Params
+
+```shell
+curl --header "Accept:application/json" https://api.zip-tax.com/request/v40?key=1234567890&street=1111%20S%20Figueroa%20St&city=Los%20Angeles&state=CA&postalcode=90015
+```
+
+### Single Address Parameter
+
+Parameter | Required | Description
+--------- | ------- | -----------
+key | yes | Your API key
+address | yes | Full U.S. address
+
+This endpoint returns a sample request.
+
+`GET https://api.zip-tax.com/request/v40?key=1234567890&address=1111%20S%20Figueroa%20St,%20Los%20Angeles,%20CA%2090015`
+
+Note: All Parameters must be url encoded.
+
+> Request Example with Single Address Param
+
+```shell
+curl --header "Accept:application/json" https://api.zip-tax.com/request/v40?key=1234567890&address=1111%20S%20Figueroa%20St,%20Los%20Angeles,%20CA%2090015
 
 # Response Results
 
@@ -124,28 +153,44 @@ Code | Reason | Description
 
 ```json
 {
-  "version": "v30",
+  "version": "v40",
   "rCode": 100,
   "results": [
-    {
-      "geoPostalCode": "90264",
-      "geoCity": "MALIBU",
-      "geoCounty": "LOS ANGELES",
-      "geoState": "CA",
-      "taxSales": 0.0925,
-      "taxUse": 0.0925,
-      "txbService": "N",
-      "txbFreight": "N",
-      "stateSalesTax": 0.06,
-      "stateUseTax": 0.06,
-      "citySalesTax": 0,
-      "cityUseTax": 0,
-      "cityTaxCode": "",
-      "countySalesTax": 0.0025,
-      "countyUseTax": 0.0025,
-      "countyTaxCode": "19",
-      "districtSalesTax": 0.03,
-      "districtUseTax": 0.03
+  {
+    "geoPostalCode": "90264",
+    "geoCity": "MALIBU",
+    "geoCounty": "LOS ANGELES",
+    "geoState": "CA",
+    "taxSales": 0.095,
+    "taxUse": 0.095,
+    "txbService": "N",
+    "txbFreight": "N",
+    "stateSalesTax": 0.06,
+    "stateUseTax": 0.06,
+    "citySalesTax": 0,
+    "cityUseTax": 0,
+    "cityTaxCode": "",
+    "countySalesTax": 0.0025,
+    "countyUseTax": 0.0025,
+    "countyTaxCode": "19",
+    "districtSalesTax": 0.0325,
+    "districtUseTax": 0.0325,
+    "district1Code": "218",
+    "district1SalesTax": 0,
+    "district1UseTax": 0,
+    "district2Code": "594",
+    "district2SalesTax": 0.0225,
+    "district2UseTax": 0.0225,
+    "district3Code": "",
+    "district3SalesTax": 0,
+    "district3UseTax": 0,
+    "district4Code": "19",
+    "district4SalesTax": 0.01,
+    "district4UseTax": 0.01,
+    "district5Code": "",
+    "district5SalesTax": 0,
+    "district5UseTax": 0,
+    "originDestination": "D"
     }
   ]
 }
@@ -169,8 +214,41 @@ cityTaxCode | Applicable city tax code | v20+ only
 countySalesTax | Portion of total sales tax from the county level | v20+ only
 countyUseTax | Portion of total use tax from the county level | v20+ only
 countyTaxCode | Applicable county tax code | v20+ only
-districtSalesTax | Portion of total sales tax from the district level | v20+ only
+districtSalesTax| Portion of total sales tax from the district level | v20+ only
 districtUseTax | Portion of total use tax from the district level | v20+ only
+district1Code | District 1 tax code | v40+ only
+district1SalesTax | Portion of total sales tax from district 1 level | v40+ only
+district1UseTax | Portion of total use tax from district 1 level | v40+ only
+district2Code | District 2 tax code | v40+ only
+district2SalesTax | Portion of total sales tax from district 2 level | v40+ only
+district2UseTax | Portion of total use tax from district 2 level | v40+ only
+district3Code | District 3 tax code | v40+ only
+district3SalesTax | Portion of total sales tax from district 3 level | v40+ only
+district3UseTax | Portion of total use tax from district 3 level | v40+ only
+district4Code | District 4 tax code | v40+ only
+district4SalesTax | Portion of total sales tax from district 4 level | v40+ only
+district4UseTax | Portion of total use tax from district 4 level | v40+ only
+district5Code | District 5 tax code | v40+ only
+district5SalesTax | Portion of total sales tax from district 5 level | v40+ only
+district5UseTax | Portion of total use tax from district 5 level | v40+ only
+originDestination | Location where a sale is taxed origin/destination (values: null,D,O) | v40+ only
+
+# Response Codes
+
+The Zip-Tax.com API returns the following response codes based on request results.
+
+Code | Reason | Description
+---- | ------ | -----------
+100 | SUCCESS | Successful API Requet
+101 | INVALID_KEY | Key format is not valid
+102 | INVALID_STATE | State format is not valid
+103 | INVALID_CITY  |  City format is not valid
+104 | INVALID_POSTAL_CODE | Postal code format is not valid
+105 | INVALID_FORMAT  |  Query string format is not valid
+106 | API_ERROR | Api error
+107 | FEATURE_NOT_ENABLED | Requested feature or version not enabled
+108 | REQUEST_LIMIT_MET | Api request limit met
+109 | ADDRESS_INCOMPLETE  | Missing address parameters
 
 # Support
 
